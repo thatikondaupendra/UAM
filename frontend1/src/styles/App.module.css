@@ -1,0 +1,434 @@
+.appContainer {
+    font-family: 'Inter', sans-serif; /* Using Inter font as requested */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+    background-color: #f3f4f6; /* Light gray background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 1rem; /* Consistent padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2d3748; /* Dark gray */
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 0.5rem 0.5rem; /* Rounded bottom corners */
+}
+
+.navbarBrand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbarUser {
+    color: #cbd5e0; /* Light gray text */
+    margin-right: 1rem;
+}
+
+.navbarButton {
+    background-color: #3182ce; /* Blue */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem; /* Rounded corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.navbarButton:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.navbarButton.logout {
+    background-color: #e53e3e; /* Red */
+}
+
+.navbarButton.logout:hover {
+    background-color: #c53030; /* Darker red on hover */
+}
+
+.navbarButton.signup {
+    background-color: #38a169; /* Green */
+}
+
+.navbarButton.signup:hover {
+    background-color: #2f855a; /* Darker green on hover */
+}
+
+/* Flex Container for Navbar Buttons (added for clarity and consistency) */
+.flexContainer {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Form Container & Elements */
+.formContainer {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 32rem; /* Max width for forms */
+}
+
+.formTitle {
+    font-size: 2.25rem; /* Larger font size */
+    font-weight: bold;
+    text-align: center;
+    color: #2d3748; /* Dark gray */
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formLabel {
+    display: block;
+    color: #4a5568; /* Gray */
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0; /* Light border */
+    border-radius: 0.375rem; /* Rounded corners */
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    color: #4a5568;
+    line-height: 1.25;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
+    outline: none;
+    border-color: #63b3ed; /* Blue on focus */
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue shadow on focus */
+}
+
+.formTextarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.checkboxGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkboxLabel {
+    display: inline-flex;
+    align-items: center;
+    color: #4a5568;
+}
+
+.checkboxInput {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #3182ce;
+    border-radius: 0.25rem;
+    border: 1px solid #e2e8f0;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+/* Buttons */
+.primaryButton {
+    background-color: #3182ce; /* Blue */
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem; /* More rounded */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.primaryButton:hover {
+    background-color: #2b6cb0; /* Darker blue */
+    transform: translateY(-1px); /* Slight lift effect */
+}
+
+.primaryButton:active {
+    transform: translateY(0);
+}
+
+.secondaryButton {
+    background-color: #48bb78; /* Green */
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.secondaryButton:hover {
+    background-color: #38a169; /* Darker green */
+    transform: translateY(-1px);
+}
+
+.secondaryButton:active {
+    transform: translateY(0);
+}
+
+.actionButton {
+    font-weight: bold;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.75rem; /* Smaller font for table actions */
+}
+
+.actionButton.approve {
+    background-color: #48bb78; /* Green */
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+.actionButton.approve:hover {
+    background-color: #38a169;
+}
+
+.actionButton.reject {
+    background-color: #e53e3e; /* Red */
+    color: #fff;
+}
+
+.actionButton.reject:hover {
+    background-color: #c53030;
+}
+
+/* Link Button (for "Don't have an account?" etc.) */
+.linkButton {
+    background: none;
+    border: none;
+    color: #3182ce; /* Blue */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.linkButton:hover {
+    color: #2b6cb0; /* Darker blue */
+    text-decoration: underline;
+}
+
+
+/* Message Box */
+.messageBox {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px; /* Ensure it's wide enough */
+}
+
+.messageBox.success {
+    background-color: #d1fae5; /* Light green */
+    border-color: #34d399; /* Green border */
+    color: #065f46; /* Dark green text */
+}
+
+.messageBox.error {
+    background-color: #fee2e2; /* Light red */
+    border-color: #ef4444; /* Red border */
+    color: #991b1b; /* Dark red text */
+}
+
+.messageBox.info {
+    background-color: #dbeafe; /* Light blue */
+    border-color: #60a5fa; /* Blue border */
+    color: #1e40af; /* Dark blue text */
+}
+
+.messageBoxText {
+    font-weight: 600;
+}
+
+.messageBoxCloseButton {
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: inherit; /* Inherit color from parent */
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+.messageBoxCloseButton:hover {
+    opacity: 1;
+}
+
+/* Table Styling (for PendingRequestsPage) */
+.tableContainer {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 72rem; /* Wider max-width for tables */
+    margin: 0 auto; /* Center the table container */
+}
+
+.table {
+    min-width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem; /* Apply rounded corners to table */
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.table thead {
+    background-color: #f7fafc; /* Light gray header */
+}
+
+.table th {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #4a5568;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.875rem;
+    color: #2d3748;
+}
+
+.table tbody tr:hover {
+    background-color: #edf2f7; /* Lighter gray on row hover */
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none; /* No border on last row's cells */
+}
+
+/* Text alignment */
+.textCenter {
+    text-align: center;
+}
+
+/* Overflow for responsive tables */
+.overflowAuto {
+    overflow-x: auto;
+}
+
+/* Access Denied / Not Found Pages */
+.infoPageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 4rem); /* Adjust for navbar height */
+    background-color: #f3f4f6;
+    padding: 1rem;
+}
+
+.infoPageContent {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 28rem;
+    width: 100%;
+}
+
+.infoPageTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e53e3e; /* Red for errors */
+    margin-bottom: 1rem;
+}
+
+.infoPageText {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+}
+
+.infoPageButton {
+    background-color: #3182ce;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.infoPageButton:hover {
+    background-color: #2b6cb0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbarBrand {
+        margin-bottom: 0.5rem;
+    }
+    .navbarUser {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    .navbarButton {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+    .formContainer {
+        padding: 1.5rem;
+    }
+    .tableContainer {
+        padding: 1rem;
+    }
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+}
