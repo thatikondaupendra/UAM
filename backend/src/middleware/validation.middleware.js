@@ -3,6 +3,7 @@
 const AppError = require('../utils/AppError');
 
 const validate = (DtoClass) => async (req, res, next) => {
+    try{
     const dtoInstance = new DtoClass(req.body);
     const errors = dtoInstance.validate();
 
@@ -14,6 +15,10 @@ const validate = (DtoClass) => async (req, res, next) => {
     // Optionally, if you want to ensure the DTO instance is used later
     req.validatedBody = dtoInstance;
     next();
+}
+catch(error){
+    console.log("valmid");
+}
 };
 
 module.exports = { validate };

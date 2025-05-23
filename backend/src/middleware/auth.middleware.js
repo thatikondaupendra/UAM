@@ -26,6 +26,7 @@ const protect = async (req, res, next) => {
         }
 
         req.user = currentUser; // Attach user to request
+        console.log("hello1",req.user.role);
         next();
     } catch (err) {
         next(err); // Pass the AppError from verifyToken or any other error
@@ -33,10 +34,14 @@ const protect = async (req, res, next) => {
 };
 
 const restrictTo = (...roles) => {
+    console.log("rt");
     return (req, res, next) => {
+        console.log(req.user.role,roles);
         if (!req.user || !roles.includes(req.user.role)) {
+            console.log("no admin");
             return next(new AppError('You do not have permission to perform this action.', 403)); // 403 Forbidden
         }
+        console.log("hello2");
         next();
     };
 };

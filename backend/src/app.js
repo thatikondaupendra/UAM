@@ -49,8 +49,9 @@ require('dotenv').config();
 if(app.use('/auth/login', authRoutes)){
     console.log("used api,auth,login")
 }
-app.use('/api/software', softwareRoutes);
-app.use('/api/requests', requestRoutes);
+app.use('/employee', authRoutes);
+app.use('/admin',authRoutes);
+app.use('/requests', requestRoutes);
 
 // Basic root route
 app.get('/', (req, res) => {

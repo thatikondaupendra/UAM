@@ -28,7 +28,7 @@ class AuthService {
         const newUser = this.userRepository.create({
             username,
             password: hashedPassword,
-            role: 'Manager', // Default role
+            role: 'Admin', // Default role
         });
         if(await this.userRepository.save(newUser)){
             console.log("saved");

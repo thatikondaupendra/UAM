@@ -12,7 +12,8 @@ const RequestAccessPage = () => {
 
     const fetchSoftware = useCallback(async () => {
         try {
-            const response = await api.get('/software');
+            const response = await api.get('employee/software');
+            console.log(response.length,"rllllength in requestAceess");
             setSoftwareList(response.data);
         } catch (error) {
             console.error("Error fetching software:", error);

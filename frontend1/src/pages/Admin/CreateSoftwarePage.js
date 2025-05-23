@@ -24,7 +24,7 @@ const CreateSoftwarePage = () => {
             return;
         }
         try {
-            await api.post('/software', { name, description, accessLevels });
+            await api.post('/admin/software', { name, description, accessLevels });
             setMessage({ text: 'Software created successfully!', type: 'success' });
             setName('');
             setDescription('');

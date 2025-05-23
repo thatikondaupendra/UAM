@@ -16,13 +16,13 @@ router.post('/login', loginUser);
 
 // --- Software Routes (Protected) ---
 router.route('/software')
-    .post(protect, restrictTo('admin'), softwareController.createSoftware) // Only admins can create
+    .post(protect, restrictTo('Admin'), softwareController.createSoftware) // Only admins can create
     .get(protect, softwareController.getAllSoftware); // All logged-in users can view
 
 router.route('/software/:id')
     .get(protect, softwareController.getSoftwareById)
-    .patch(protect, restrictTo('admin'), softwareController.updateSoftware) // Only admins can update
-    .delete(protect, restrictTo('admin'), softwareController.deleteSoftware); // Only admins can delete
+    .patch(protect, restrictTo('Admin'), softwareController.updateSoftware) // Only admins can update
+    .delete(protect, restrictTo('Admin'), softwareController.deleteSoftware); // Only admins can delete
 
 // --- Request Routes (Protected) ---
 router.route('/requests')
