@@ -16,7 +16,7 @@ const LoginPage = () => {
         e.preventDefault();
         setMessage(null);
         try {
-            const response = await api.post('/auth/login', { username, password });
+            const response = await api.post('/api/auth/login', { username, password });
             const { token, role } = response.data;
             const payload = JSON.parse(atob(token.split('.')[1]));
             login(token, { id: payload.userId, username: payload.username || username, role });

@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const authRoutes = require('./auth/auth.controller');
+const authRoutes = require('./routes/index');
 const softwareRoutes = require('./software/sofware.controller');
 const requestRoutes = require('./requests/request.controller');
 
@@ -12,12 +12,20 @@ const authService = new AuthService();
 
 const app = express();
 
+const corsOptions = {
+  origin: 'http://localhost:3001', // Replace with your frontend's actual URL
+  credentials: true, // Allow cookies to be sent (if you're using sessions/cookies for auth)
+  optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions)); // Enable CORS for all origins (for development)
+// Middleware
+app.use(express.json()); // Enable JSON body parsing
+
 const authRoute = require('./routes/index'); // Assuming you export your router from auth.routes.js
 
 app.use('/api/auth',authRoute);
-// Middleware
-app.use(express.json()); // Enable JSON body parsing
-app.use(cors()); // Enable CORS for all origins (for development)
+
 
 require('dotenv').config();
 // API Routes

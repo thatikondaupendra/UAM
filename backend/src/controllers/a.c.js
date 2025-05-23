@@ -3,13 +3,17 @@ const authService = require('../services/auth.serive');
 async function registerUser(req, res, next) {
     try {
         console.log('registerUser controller function entered.'); // Debugging line
-        const user = await authService.register(req.body);
+        const { username, password } = req.body;
+        const user = await authService.register(username,password);
+        console.log("user",user);
+        console.log(res);
         res.status(201).json({ message: 'User registered successfully.', user });
     } catch (error) {
         if (error.message === 'Username already exists.') {
             return res.status(409).json({ message: error.message });
         }
-        next(error);
+        next(error.message);
+        console.log("error from c");
     }
 }
 
@@ -22,7 +26,8 @@ async function registerUser(req, res, next) {
 async function loginUser(req, res, next) {
     try {
         console.log('loginUser controller function entered.'); // Debugging line
-        const { token, role } = await authService.login(req.body);
+        const {username,password}=req.body;
+        const { token, role } = await authService.login(username,password);
         res.status(200).json({ message: 'Login successful.', token, role });
     } catch (error) {
         if (error.message === 'Invalid credentials.') {
