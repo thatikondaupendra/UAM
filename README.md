@@ -3,16 +3,15 @@
 
 ## Table of Contents
 
-  * [About the Project](https://www.google.com/search?q=%23about-the-project)
-  * [Features](https://www.google.com/search?q=%23features)
-  * [Tech Stack](https://www.google.com/search?q=%23tech-stack)
-  * [Getting Started](https://www.google.com/search?q=%23getting-started)
-      * [Prerequisites](https://www.google.com/search?q=%23prerequisites)
-      * [Installation](https://www.google.com/search?q=%23installation)
-  * [Usage](https://www.google.com/search?q=%23usage)
-  * [Contributing](https://www.google.com/search?q=%23contributing)
-  * [License](https://www.google.com/search?q=%23license)
-  * [Contact](https://www.google.com/search?q=%23contact)
+  * [About the Project]()
+  * [Features]()
+  * [Tech Stack]()
+  * [Getting Started]()
+      * [Prerequisites]()
+      * [Installation]()
+  * [Usage]()
+  * [Contributing]()
+  * [Contact]()
 
 
 
@@ -69,7 +68,7 @@ Before you begin, ensure you have the following installed:
 
   * **Node.js** (LTS version recommended)
   * **npm** (Node Package Manager, usually comes with Node.js)
-  * **[Any specific database client, e.g., MongoDB Compass, psql client, MySQL Workbench, if needed for local setup]**
+  * **[Any specific database client, e.g., MongoDB Compass, psql client, MySQL Workbench]**
 
 ### Installation
 
@@ -113,7 +112,7 @@ PORT=3000
         ```
       * Start the backend server:
         ```bash
-        npm start # Or `node server.js`, `nodemon server.js`
+        npm run server # Or `node server.js`, `nodemon server.js`
         ```
         The backend API should now be running, typically on `http://localhost:5000` (or the PORT defined in your `.env`).
 
