@@ -3,15 +3,15 @@
 
 ## Table of Contents
 
-  * [About the Project]()
-  * [Features]()
-  * [Tech Stack]()
-  * [Getting Started]()
-      * [Prerequisites]()
-      * [Installation]()
-  * [Usage]()
-  * [Contributing]()
-  * [Contact]()
+  * [About the Project](https://github.com/thatikondaupendra/UAM/blob/master/README.md#about-the-project)
+  * [Features](https://github.com/thatikondaupendra/UAM/edit/master/README.md#features)
+  * [Tech Stack](https://github.com/thatikondaupendra/UAM/edit/master/README.md#tech-stack)
+  * [Getting Started](https://github.com/thatikondaupendra/UAM/edit/master/README.md#getting-started)
+      * [Prerequisites](https://github.com/thatikondaupendra/UAM/edit/master/README.md#prerequisites)
+      * [Installation](https://github.com/thatikondaupendra/UAM/edit/master/README.md#installation)
+  * [Usage](https://github.com/thatikondaupendra/UAM/edit/master/README.md#usage)
+  * [Contributing](https://github.com/thatikondaupendra/UAM/edit/master/README.md#contributing)
+  * [Contact](https://github.com/thatikondaupendra/UAM/edit/master/README.md#contact)
 
 
 
