@@ -12,17 +12,12 @@ class AuthService {
     }
 
     async register(username, password) {
-        try{console.log("servicejs")
-        if (username && password){
-            console.log(username,password);
-        }
+        try{
         const existingUser = await this.userRepository.findOneBy({ username });
-        console.log("eu",existingUser);
+        
         if (existingUser) {
             throw new AppError('Username already exists.', 409); // 409 Conflict
         }
-
-        console.log("neu");
         const hashedPassword = await hashPassword(password);
 
         const newUser = this.userRepository.create({

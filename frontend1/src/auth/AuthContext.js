@@ -20,12 +20,13 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
 
     useEffect(() => {
+        alert("useEffect in authProvider");
         if (token) {
             try {
                 const payload = JSON.parse(atob(token.split('.')[1]));
                 const storedUser = {
                     id: payload.userId,
-                    username: payload.username || 'User',
+                    username: payload.username || 'Employee',
                     role: payload.role
                 };
                 setUser(storedUser);

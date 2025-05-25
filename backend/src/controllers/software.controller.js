@@ -6,9 +6,7 @@ const { validate } = require('../middleware/validation.middleware');
 const AppError = require('../utils/AppError');
 
 const createSoftware = async (req, res, next) => {
-    console.log("hellllll");
     try {
-        console.log("csc");
         const { name, description, accessLevels } = req.validatedBody;
         const software = await softwareService.createSoftware(name, description, accessLevels);
         res.status(201).json({
@@ -22,18 +20,20 @@ const createSoftware = async (req, res, next) => {
 };
 
 const getAllSoftware = async (req, res, next) => {
-    console.log("gs");
     try {
         const softwares = await softwareService.getAllSoftware();
-        console.log(softwares.length);
+        console.log("length",softwares.length);
         res.status(200).json({
             status: 'success',
             results: softwares.length,
             data: softwares,
         });
-        console.log('res',res.data);
+console.log("gs controller finished");
+console.log(res.results);
+        
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
+        console.log("gse");
     }
 };
 

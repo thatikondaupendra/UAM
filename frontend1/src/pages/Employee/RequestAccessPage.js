@@ -12,9 +12,10 @@ const RequestAccessPage = () => {
 
     const fetchSoftware = useCallback(async () => {
         try {
-            const response = await api.get('employee/software');
-            console.log(response.length,"rllllength in requestAceess");
-            setSoftwareList(response.data);
+            alert("fs");
+            const response = await api.get('employee/software')
+            console.log(response.data.data[0]);
+            setSoftwareList(response.data.data);
         } catch (error) {
             console.error("Error fetching software:", error);
             setMessage({ text: 'Failed to load software list.', type: 'error' });

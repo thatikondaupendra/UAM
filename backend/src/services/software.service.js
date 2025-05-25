@@ -26,12 +26,6 @@ class SoftwareService {
 
 async getAllSoftware() {
     try {
-        try{
-        const softwares = await this.softwareRepository.find();
-        }
-        catch(err){
-            console.log("again");
-        }
         const softwares= await this.softwareRepository.find();
         
         // Check if `softwares` is empty before mapping
@@ -57,6 +51,7 @@ async getAllSoftware() {
                 parsedAccessLevels = s.accessLevels;
             }
 
+            console.log("gss");
             return {
                 ...s,
                 accessLevels: parsedAccessLevels
