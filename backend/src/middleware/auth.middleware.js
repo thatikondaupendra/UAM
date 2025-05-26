@@ -16,6 +16,7 @@ const protect = async (req, res, next) => {
     }
 
     try {
+        console.log("entered protect");
         const decoded = verifyToken(token); // This will throw if invalid/expired
 
         const userRepository = AppDataSource.getRepository(User);
@@ -29,7 +30,9 @@ const protect = async (req, res, next) => {
         console.log("hello1",req.user.role);
         next();
     } catch (err) {
-        next(err); // Pass the AppError from verifyToken or any other error
+        alert(err);
+        console.log("this middleware error");
+        //next(err); // Pass the AppError from verifyToken or any other error
     }
 };
 

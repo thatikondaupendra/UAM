@@ -30,9 +30,10 @@ router.route('/requests')
     .get(protect, requestController.getAllRequests); // Users see their own, admins see all
 
 router.route('/requests/:id')
-    .get(protect, requestController.getRequestById);
-
+    .get(protect, requestController.getRequestById)
+    .patch(protect,requestController.updateRequestStatus);
 // Admin-specific request routes
-router.patch('/requests/:id/status', protect, restrictTo('admin'), requestController.updateRequestStatus); // Only admins can update status
+//router.route('/requests/:id')
+//.patch(protect, requestController.updateRequestStatus); // Only admins can update status
 
 module.exports = router;

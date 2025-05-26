@@ -28,6 +28,7 @@ const RequestAccessPage = () => {
 
     const handleSoftwareChange = (e) => {
         const id = e.target.value;
+        alert(id);
         setSelectedSoftwareId(id);
         setAccessType(''); // Reset access type when software changes
     };
@@ -35,16 +36,19 @@ const RequestAccessPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage(null);
+        alert("sid",selectedSoftwareId);
         if (!selectedSoftwareId || !accessType || !reason) {
             setMessage({ text: 'All fields are required.', type: 'error' });
             return;
         }
         try {
-            await api.post('/requests', {
+            alert("id:",parseInt(selectedSoftwareId),"acty:",accessType,"re",reason);
+            await api.post('employee/requests', {
                 softwareId: parseInt(selectedSoftwareId),
                 accessType,
                 reason,
             });
+            alert("employee/requests");
             setMessage({ text: 'Access request submitted successfully!', type: 'success' });
             setSelectedSoftwareId('');
             setAccessType('');
@@ -65,7 +69,15 @@ const RequestAccessPage = () => {
     };
 
     const selectedSoftware = softwareList.find(s => s.id === parseInt(selectedSoftwareId));
-
+//try{
+//selectedSoftware.accessLevels.map((lev,index)=>(
+//alert(lev.slice(2,lev.length-2))
+//));
+//}
+//catch (err){
+//    console.log(err.message);
+//    console.log("try again");
+//}
     return (
         <div className={styles.mainContent}>
             {message && <MessageBox message={message.text} type={message.type} onClose={() => setMessage(null)} />}
@@ -106,8 +118,8 @@ const RequestAccessPage = () => {
                             >
                                 <option value="">Select Access Type</option>
                                 {selectedSoftware.accessLevels.map(level => (
-                                    <option key={level} value={level}>
-                                        {level}
+                                    <option key={level.slice(2,level.length-2)} value={level.slice(2,level.length-2)}>
+                                        {level.slice(2,level.length-2)}
                                     </option>
                                 ))}
                             </select>

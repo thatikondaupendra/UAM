@@ -24,7 +24,7 @@ const PendingRequestsPage = () => {
     const handleStatusUpdate = async (requestId, status) => {
         setMessage(null);
         try {
-            await api.patch(`/requests/${requestId}`, { status });
+            await api.patch(`manager/requests/${requestId}`, { status });
             setMessage({ text: `Request ${status.toLowerCase()} successfully!`, type: 'success' });
             fetchPendingRequests(); // Refresh the list
         } catch (error) {

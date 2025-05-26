@@ -8,6 +8,7 @@ const AppError = require('../utils/AppError');
 const createRequest = async (req, res, next) => {
     try {
         const userId = req.user.id; // From auth.middleware
+        console.log(userId);
         const { softwareId, accessType, reason } = req.validatedBody;
         const request = await requestService.createRequest(userId, softwareId, accessType, reason);
         res.status(201).json({
@@ -54,6 +55,7 @@ const getRequestById = async (req, res, next) => {
 };
 
 const updateRequestStatus = async (req, res, next) => {
+    console.log("urs");
     try {
         const requestId = parseInt(req.params.id, 10);
         if (isNaN(requestId)) {
@@ -72,7 +74,7 @@ const updateRequestStatus = async (req, res, next) => {
 };
 
 module.exports = {
-    createRequest: [validate(CreateRequestDto), createRequest],
+    createRequest,
     getAllRequests,
     getRequestById,
     updateRequestStatus: [validate(UpdateRequestStatusDto), updateRequestStatus],

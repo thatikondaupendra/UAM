@@ -51,7 +51,6 @@ class UpdateRequestStatusDto {
    */
   validate() {
     const errors = [];
-
     // --- Validate 'status' ---
     const allowedStatuses = ['Approved', 'Rejected'];
     if (typeof this.status !== 'string') {

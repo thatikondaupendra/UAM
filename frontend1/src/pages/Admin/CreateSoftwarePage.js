@@ -14,6 +14,7 @@ const CreateSoftwarePage = () => {
         setAccessLevels(prev =>
             checked ? [...prev, value] : prev.filter(level => level !== value)
         );
+        console.log(accessLevels);
     };
 
     const handleSubmit = async (e) => {
@@ -81,6 +82,7 @@ const CreateSoftwarePage = () => {
                         </label>
                         <div className={styles.checkboxGroup}>
                             {['Read', 'Write', 'Admin'].map(level => (
+                                
                                 <label key={level} className={styles.checkboxLabel}>
                                     <input
                                         type="checkbox"
@@ -91,7 +93,9 @@ const CreateSoftwarePage = () => {
                                     />
                                     <span>{level}</span>
                                 </label>
-                            ))}
+
+                            )
+                            )}
                         </div>
                     </div>
                     <button

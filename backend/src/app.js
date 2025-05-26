@@ -51,6 +51,7 @@ if(app.use('/auth/login', authRoutes)){
 }
 app.use('/employee', authRoutes);
 app.use('/admin',authRoutes);
+app.use('/manager',authRoute);
 app.use('/requests', requestRoutes);
 
 // Basic root route
